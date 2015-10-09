@@ -1,0 +1,54 @@
+﻿@model DirectorioSahuro.Models.Directorio
+@{
+    ViewBag.Title = "Eliminar Contacto";
+}
+<h2>
+    Eliminar contacto</h2>
+<h3>
+    ¿Estás seguro de que deseas eliminar el contacto seleccionado?</h3>
+<table width="100%">
+    <tr>
+        <td style="width: 110px">
+            <b>Fotografía del Contacto</b>
+        </td>
+        <td>
+            <b>Datos de Contacto</b>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <img src='../../@Html.DisplayFor(model => model.FOTOGRAFIA)' alt="NO_IMAGE" height="100px" width="100px" />
+        </td>
+        <td>
+            <div class="display-label">
+                <b>NOMBRE</b></div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NOMBRE)
+            </div>
+            <div class="display-label">
+                <b>FECHA_NACIMIENTO</b></div>
+            <div class="display-field">
+                @DateTime.Parse(Html.DisplayFor(model => model.FECHA_NACIMIENTO).ToString()).ToString("D")
+            </div>
+            <div class="display-label">
+                <b>TELEFONOS</b></div>
+            <div class="display-field">
+                @{
+                    string telefonos = (Html.DisplayFor(model => model.TELEFONOS)).ToString();
+                    foreach (string a in telefonos.Split(','))
+                    {
+                    <p>@a</p>
+                    }
+                }
+            </div>
+        </td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Eliminar Contacto" />
+        |
+        @Html.ActionLink("Regresar al Directorio", "Index")
+    </p>
+}

@@ -1,0 +1,6 @@
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\DirectorioSahuro.dll
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\DirectorioSahuro.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\EntityFramework.dll
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\EntityFramework.xml
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\obj\Release\DirectorioSahuro.dll
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\obj\Release\DirectorioSahuro.pdb

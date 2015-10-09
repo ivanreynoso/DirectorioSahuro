@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DirectorioSahuro.Models.Directorio>
+@{
+    ViewBag.Title = "Mi Directorio";
+}
+<h2>
+    Mi Directorio</h2>
+<p>
+    @Html.ActionLink("Nuevo Contacto", "Create")
+</p>
+<hr />
+<h3>
+    DevExpress View</h3>
+<hr />
+@Html.Action("GridView3Partial")
+<hr />
+<h3>
+    Table View</h3>
+<hr />
+<table>
+    <tr id="GridView1_DXHeadersRow0">
+        <th>
+            FOTOGRAFIA
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            FECHA DE NACIMIENTO
+        </th>
+        <th>
+            TELEFONOS
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="center">
+                <img src='@Html.DisplayFor(modelItem => item.FOTOGRAFIA)' alt="NO_IMAGE" height="60px" width="60px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.FECHA_NACIMIENTO).ToString().Substring(0, 10)
+            </td>
+            <td>
+                @{
+        string telefonos = (Html.DisplayFor(modelItem => item.TELEFONOS)).ToString();
+        foreach (string a in telefonos.Split(','))
+        {
+                    <p>@a</p>
+        }
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Ver Detalles", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Editar Contacto", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Eliminar Contacto", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,7 @@
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\DirectorioSahuro.dll
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\DirectorioSahuro.pdb
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\EntityFramework.dll
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\bin\EntityFramework.xml
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\obj\Debug\DirectorioSahuro.dll
+c:\users\usuario\documents\visual studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\obj\Debug\DirectorioSahuro.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\DirectorioSahuro\DirectorioSahuro\obj\Debug\DirectorioSahuro.csprojResolveAssemblyReference.cache

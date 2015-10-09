@@ -1,0 +1,68 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridView3";
+        settings.CallbackRouteValues = new { Controller = "Directorio", Action = "GridView3Partial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Directorio", Action = "GridView3PartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Directorio", Action = "GridView3PartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Directorio", Action = "GridView3PartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = false;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+        settings.KeyFieldName = "ID";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "FOTOGRAFIA";
+            column.PropertiesEdit.EncodeHtml = false;
+        });
+        settings.Columns.Add("NOMBRE");
+        settings.Columns.Add("FECHA_NACIMIENTO");
+        settings.Columns.Add("TELEFONOS");
+
+        settings.Columns.Add(column =>
+        {
+            column.Name = "Name";
+            column.Caption = "Ver Detalles";
+
+            column.SetDataItemTemplateContent(content =>
+                ViewContext.Writer.Write(
+                    Html.ActionLink("Ver Detalles", "Details", new { ID = content.KeyValue }, null)));
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Name = "Name";
+            column.Caption = "Editar";
+
+            column.SetDataItemTemplateContent(content =>
+                ViewContext.Writer.Write(
+                    Html.ActionLink("Editar Contacto", "Edit", new { ID = content.KeyValue }, null)));
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Name = "Name";
+            column.Caption = "Eliminar";
+
+            column.SetDataItemTemplateContent(content =>
+                ViewContext.Writer.Write(
+                    Html.ActionLink("Eliminar Contacto", "Delete", new { ID = content.KeyValue }, null)));
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
